@@ -5,6 +5,10 @@
 Before running BindPPI models for RF_{13}, MLP_{5120///512, 13//416}, and AvgEns, you need to create a folder that includes two input files.
 
 (see the example of 202307091239)
+
+Before running BindPPI model for MLP_{5120}, you just need to create a JSON file for input sequence.
+
+(see the example of sample_input_sequence.json)
   
 </font>
 
@@ -21,14 +25,6 @@ Before running BindPPI models for RF_{13}, MLP_{5120///512, 13//416}, and AvgEns
 
   The columns are separated by tabs.
 
-</font>
-
-<font size=4> 
-  
-Before running BindPPI model for MLP_{5120}, you just need to create a JSON file for input sequence.
-
-(see the example of sample_input_sequence.json)
-  
 </font>
 
 
