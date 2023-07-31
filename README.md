@@ -82,7 +82,7 @@ BindPPI requires the following software and packages.
 </font>
 
 ```
-$ conda env create -f environment.yml
+$ conda env create -f environment.yaml
 ```
 
 ### II. INSTALLATION INSTRUCTIONS
