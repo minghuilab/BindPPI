@@ -1,0 +1,31 @@
+* produce namd psf and pdb files from charmm psf and crd
+*
+bomlev -2
+
+set pathpara @pathpara
+
+! Read in Topology and  Parameter files
+read rtf card name @pathpara/top_all36_prot.rtf
+read param card name @pathpara/par_all36_prot.prm
+
+! Read Psf and Crd files of charmm
+
+OPEN UNIT 1 FORM READ NAME @path/@protname_charmm.psf
+READ PSF CARD UNIT 1
+CLOSe UNIT 1
+
+OPEN UNIT 1 CARD READ NAME @path/@protname_charmm.crd
+READ COOR CARD UNIT 1
+CLOSE UNIT 1
+
+! produce namd psf and pdb files
+
+open write unit 1 card name @path/@protname_namd.psf 
+write psf card xplor unit 1 
+close unit 1 
+
+open write unit 1 card name @path/@protname_namd.pdb
+write coor pdb unit 1
+close unit 1
+
+

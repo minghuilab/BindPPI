@@ -1,0 +1,26 @@
+! Read in Topology and  Parameter files
+
+read rtf card name @pathpara/top_all36_prot.rtf
+read param card flex name @pathpara/par_all36_prot.prm
+stream @pathpara/toppar_water_ions.str
+
+! Get psf and coordinates
+read psf card name @path/@protname_charmm.psf
+read coor card name @path/@protname_min.crd 
+
+
+! hydrogen bonding patterns in initial structure
+! the "coor hbond" depends on DONOr/ACCEptor information in PSF to
+! identify possible hbonding partners; see corman.doc for details
+! we use strictly geometric criteria on the H...A distance, and optionally
+! on the D-H...A angle to define the hydrogen bond
+! first look at the backbone-backbone hydrogen bonds
+
+! calcuate hydrgen bonds formed between segments of PROC and PROD and segments of DNAA and DNAB.
+coor hbond CUTHB 2.5 CUTHA 90.0 verbose select segid p1 end select segid p2 end 
+
+! calculate salt-bridge
+coor CONTact CUTHB 4.0 verbose select ((segid p1) .and. (resname ASP .or. resname GLU .or. resname LYS .or. resname ARG) -
+.and. (type NZ .or. type NH1 .or. type NH2 .or. type OE1 .or. type OE2 .or. type OD1 .or. type OD2)) end -
+select ((segid p2 ) .and. (resname ASP .or. resname GLU .or. resname LYS .or. resname ARG) -
+.and. (type NZ .or. type NH1 .or. type NH2 .or. type OE1 .or. type OE2 .or. type OD1 .or. type OD2)) end
