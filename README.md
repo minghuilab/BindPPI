@@ -9,7 +9,7 @@ BindPPI calculates the binding affinities for the protein-protein complexes to e
 ## Source code releases
 <font size=4> 
   
-You can download [releases](https://github.com/minghuilab/BindPPI/releases) from Github.
+You can download [releases](https://github.com/minghuilab/BindPPI/releases/tag/V1.0) from Github.
 
 </font>
 
