@@ -1010,7 +1010,6 @@ else:
             out = self.fc6(out)
             return out
 
-    # 获取文件路径
     embedding_file_path = pathoutput + '/'
 
     seq_dict = {}
@@ -1040,7 +1039,7 @@ else:
     model_name = "esm2_t36_3B_UR50D"
     model, alphabet = esm.pretrained.esm2_t36_3B_UR50D()
     batch_converter = alphabet.get_batch_converter()
-    model.eval()#.to(device)
+    model.eval()
     def get_embed(datatmp):    
         batch_labels, batch_strs, batch_tokens = batch_converter(datatmp)
         with torch.no_grad():
@@ -1105,7 +1104,6 @@ else:
     df_list = []
 
     for num in range(50):
-        ## 修改读入模型
         seed = 0
         torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)

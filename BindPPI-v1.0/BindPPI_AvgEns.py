@@ -792,7 +792,6 @@ else:
     cal_MITS020101()
 
 
-    # 获取文件路径
     embedding_file_path = pathoutput + '/'
 
     seq_dict = {}
@@ -868,7 +867,6 @@ else:
     loss_fn = nn.MSELoss()
     df_mean = pd.DataFrame()
     for num in range(50):
-        ## 修改读入模型
         seed = 0
         torch.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)

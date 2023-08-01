@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[23]:
-
-
 import random
 import pandas as pd
 import numpy as np
@@ -23,52 +19,37 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-# In[26]:
 
-
-# 创建命令行参数解析器
 parser = argparse.ArgumentParser(description='Process input_sequence JSON file path.')
-# 添加文件路径参数
 parser.add_argument('-f', '--file', type=str, help='Path to input_sequence JSON file')
 parser.add_argument('-d', '--dir', type=str, help='Path to save the embedding JSON file')
 parser.add_argument('-o', '--output', type=str, help='the predition file')
 
-
-
-# 解析命令行参数
 args = parser.parse_args()
 
-# 获取文件路径
 json_file_path = args.file
 embedding_file_path = args.dir
 output_file = args.output
 
-# 检查文件路径是否提供
 if json_file_path is None:
     print('Please provide the JSON file path.')
     exit()
     
-# 生成嵌入文件路径
 if embedding_file_path is None:
     embedding_file_path = os.path.join(os.getcwd(), 'embedding/')
 
-# 创建嵌入文件夹路径（如果不存在）
 os.makedirs(embedding_file_path, exist_ok=True)
 
-# 生成预测结果文件路径
 if output_file is None:
     output_file = os.path.join(os.getcwd(), 'prediction.txt')
 
-# 打开 JSON 文件并加载内容到字典中
 with open(json_file_path, 'r') as fw:
     seq_dict = json.load(fw)
-# 在这里可以使用 seq_dict 变量进行进一步的处理
-
 
 model_name = "esm2_t36_3B_UR50D"
 model, alphabet = esm.pretrained.esm2_t36_3B_UR50D()
 batch_converter = alphabet.get_batch_converter()
-model.eval()#.to(device)
+model.eval()
 def get_embed(datatmp):    
     batch_labels, batch_strs, batch_tokens = batch_converter(datatmp)
     with torch.no_grad():
@@ -112,10 +93,8 @@ label_list = {}
 node_dims = 5120
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 loss_fn = nn.MSELoss()
-#df_mean = pd.DataFrame()
 df_list = []
 for num in range(50):
-    ## 修改读入模型
     seed = 0
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
