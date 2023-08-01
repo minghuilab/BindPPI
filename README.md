@@ -21,6 +21,18 @@ You can download [releases](https://github.com/minghuilab/BindPPI/releases) from
 
 BindPPI requires the following software and packages.
 
+#### Requirements for MLP_{5120} models.
+
+1. Python3 packages: 
+
+    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
+
+```
+$ conda env create -f environment.yaml
+```
+
+#### Requirements for RF_{13}, MLP_{5120///512, 13//416}，AvgEns models 
+
 1. VMD
 
    This is available on the VMD website.
@@ -74,16 +86,20 @@ BindPPI requires the following software and packages.
    This is available on the FoldX website.
 
    http://foldxsuite.crg.eu/
-
+   
 10. Python3 packages: 
 
-    To install these packages, you can install the required environment by modifying the prefix in the environment.yml file and use the following command:
-
-</font>
+    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
 
 ```
 $ conda env create -f environment.yaml
 ```
+
+11. MLP_{5120///512, 13//416} models: 
+    For the MLP_{5120///512, 13//416} model, you need to download its models and place it in the ./BindPPI-v1.0/inputfiles/ directory. 
+    The download link is https://drive.google.com/drive/folders/1sXAz-SmV2kuWJC8TJY1F1G5MGhm36Z5n.
+
+</font>
 
 ### II. INSTALLATION INSTRUCTIONS
 
@@ -112,7 +128,7 @@ $ cd BindPPI-v1.0/
 
 <font size=4>
 
-4. Change the path parameters in BindPPI.py:
+4. Change the path parameters in BindPPI_RF13.py,BindPPI_5120-512-13-416.py,BindPPI_AvgEns.py:
 
 </font>
 
@@ -131,9 +147,6 @@ pathprovean = path for PROVEAN software # '/usr/local/bin/provean.sh' ##need cha
 
 ### III. RUNNING BindPPI
 
-```
-python BindPPI.py -i 202307091239
-```
 #### For model RF_{13}
 ```
 python BindPPI_RF13.py -i 202307091239

@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import os, re
@@ -53,7 +50,7 @@ pathmcvol = path for McVol software #'/data/jiang/tools/McVol.rev/' ##need chang
 pathpdb2pqr30 = path for PDB2PQR software #'/data/jiang/anaconda3/bin/pdb2pqr30' ##need change
 pathprovean = path for PROVEAN software # '/usr/local/bin/provean.sh' ##need change
 
-
+path_model = pathinput+'/RF13.pkl'
 jobpath = workdir + jobid
 pathoutput = workdir + jobid + '_out'
 os.system("mkdir %s" % pathoutput)

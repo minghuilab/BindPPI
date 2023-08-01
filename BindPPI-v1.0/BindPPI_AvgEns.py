@@ -70,7 +70,7 @@ pathpdb2pqr30 = path for PDB2PQR software #'/data/jiang/anaconda3/bin/pdb2pqr30'
 pathprovean = path for PROVEAN software # '/usr/local/bin/provean.sh' ##need change
 
 
-
+path_model = pathinput+'/RF13.pkl'
 jobpath = workdir + jobid
 pathoutput = workdir + jobid + '_out'
 os.system("mkdir %s" % pathoutput)
@@ -792,129 +792,129 @@ else:
     cal_MITS020101()
 
 
-# 获取文件路径
-embedding_file_path = pathoutput + '/'
+    # 获取文件路径
+    embedding_file_path = pathoutput + '/'
 
-seq_dict = {}
-seq_dict[pdb] = {}
-p1_seq = []
-p2_seq = []
-for chain in p1:
-    with open(pathoutput+'/'+pdb+'_'+chain+'.seq','r') as f_seq:
-        lines = f_seq.readlines()
-        for line in lines:
-            if line.startswith('>'):
-                seq = lines[lines.index(line)+1].strip()
-                break
-        p1_seq.append([seq])
-seq_dict[pdb]['p1'] = p1_seq
-for chain in p2:
-    with open(pathoutput+'/'+pdb+'_'+chain+'.seq','r') as f_seq:
-        lines = f_seq.readlines()
-        for line in lines:
-            if line.startswith('>'):
-                seq = lines[lines.index(line)+1].strip()
-                break
-    p2_seq.append([seq])
-seq_dict[pdb]['p2'] = p2_seq
-
-
-model_name = "esm2_t36_3B_UR50D"
-model, alphabet = esm.pretrained.esm2_t36_3B_UR50D()
-batch_converter = alphabet.get_batch_converter()
-model.eval()#.to(device)
-def get_embed(datatmp):    
-    batch_labels, batch_strs, batch_tokens = batch_converter(datatmp)
-    with torch.no_grad():
-        results = model(batch_tokens, repr_layers = [36], return_contacts=True)
-    token_representations = results["representations"][36]
-    sequence_representations = []
-    for i, (_, seq) in enumerate(datatmp):
-        sequence_representations.append(token_representations[i, 1 : len(seq) + 1].mean(0))
-    final1 = {}
-    for pdb_chain,representations in zip(datatmp,sequence_representations):
-        final1[pdb_chain[0]] = representations
-    return final1
-
-complex_data = []
-for comp in seq_dict:
-    for partner in seq_dict[comp]:
-        for seq,seq_id in zip(seq_dict[comp][partner],range(len(seq_dict[comp][partner]))):
-            complex_data.append((comp+'_'+partner+'_'+str(seq_id),seq[0]))
-
-for i in complex_data:
-    embedding_dict = get_embed([i])
-    embedding_dict[i[0]] = embedding_dict[i[0]].numpy().tolist()
-    with open(f'{embedding_file_path}{i[0]}.json','w') as f:
-        json.dump(embedding_dict,f)
-all_torch = {}
-for comp in seq_dict:
-    comp_tensors = []
-    for partner in seq_dict[comp]:
-        partner_tensors = []
-        for seq_id in range(len(seq_dict[comp][partner])):
-            id_use = comp+'_'+partner+'_'+str(seq_id)
-            with open(f'{embedding_file_path}{id_use}.json','r') as fw:
-                partner_tensor = json.load(fw)
-                partner_tensors.append(torch.tensor(list(partner_tensor.values())).squeeze(0))
-        comp_tensors.append(torch.mean(torch.stack(partner_tensors), dim=0))
-    all_torch[comp] = torch.cat(comp_tensors,axis = 0) 
-test_keys = [key for key in all_torch]
-test_dataset = Dataset(test_keys,all_torch)
-test_dataloader = DataLoader(test_dataset, batch_size = 32, shuffle=True) 
-label_list = {}
-node_dims = 5120
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-loss_fn = nn.MSELoss()
-df_mean = pd.DataFrame()
-for num in range(50):
-    ## 修改读入模型
-    seed = 0
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    np.random.seed(seed)
-    random.seed(seed) 
-    torch.backends.cudnn.deterministic = True
-    model_test = torch.load('/data/jiang/affi/bindppi/inputfiles/mlp5120_models/mlp5120_{}.pkl'.format(num),map_location=device)
-    model_test.eval()
-    pred_data = []
-    lable_data = []
-    key_data = []
-    loss_data = []
-    for i_batch, sample_test in enumerate(test_dataloader):
-        graph = sample_test['data'].to(device)
-        graph = torch.squeeze(graph , 1)
-        key = sample_test['key']
-        logits = model_test.forward(graph)
-        pred = torch.squeeze(logits , 1)
-        pred_value = torch.squeeze(logits, 1)
-        for i in list(pred_value.cpu().detach().numpy()):
-            pred_data.append(i)
-        for i in key:
-            key_data.append(i)
-    tmp_df = pd.DataFrame({'key':key_data,'pred':pred_data})
-    df = tmp_df.sort_values(['key']).reset_index(drop=True)
-    df_mean = pd.concat([df_mean,df],axis = 1)
-df_mean['BindPPI_MLP5120'] = np.average(df_mean['pred'], axis=1)
-df_mean['PDBid'] = df_mean['key'].iloc[:,:1]
-df_mean = df_mean[['PDBid','BindPPI_MLP5120']]
+    seq_dict = {}
+    seq_dict[pdb] = {}
+    p1_seq = []
+    p2_seq = []
+    for chain in p1:
+        with open(pathoutput+'/'+pdb+'_'+chain+'.seq','r') as f_seq:
+            lines = f_seq.readlines()
+            for line in lines:
+                if line.startswith('>'):
+                    seq = lines[lines.index(line)+1].strip()
+                    break
+            p1_seq.append([seq])
+    seq_dict[pdb]['p1'] = p1_seq
+    for chain in p2:
+        with open(pathoutput+'/'+pdb+'_'+chain+'.seq','r') as f_seq:
+            lines = f_seq.readlines()
+            for line in lines:
+                if line.startswith('>'):
+                    seq = lines[lines.index(line)+1].strip()
+                    break
+        p2_seq.append([seq])
+    seq_dict[pdb]['p2'] = p2_seq
 
 
+    model_name = "esm2_t36_3B_UR50D"
+    model, alphabet = esm.pretrained.esm2_t36_3B_UR50D()
+    batch_converter = alphabet.get_batch_converter()
+    model.eval()#.to(device)
+    def get_embed(datatmp):    
+        batch_labels, batch_strs, batch_tokens = batch_converter(datatmp)
+        with torch.no_grad():
+            results = model(batch_tokens, repr_layers = [36], return_contacts=True)
+        token_representations = results["representations"][36]
+        sequence_representations = []
+        for i, (_, seq) in enumerate(datatmp):
+            sequence_representations.append(token_representations[i, 1 : len(seq) + 1].mean(0))
+        final1 = {}
+        for pdb_chain,representations in zip(datatmp,sequence_representations):
+            final1[pdb_chain[0]] = representations
+        return final1
 
-def model_predict():
-    kinds = ['contacts','inter_sec_stru','nis','ipot','provean','McVol_whole','aaindex1','energy_asa_len']
-    pdb_fea_list = []
-    for kind in kinds:
-        file = pdb+'_'+kind+'.'+suffix
-        pdb_fea = pd.read_csv(pathoutput+'/'+file,sep='\t')
-        pdb_fea_list.append(pdb_fea)
-    pdb_feas = pd.concat(pdb_fea_list,axis=1)[need_feas]
-    model_fit = joblib.load(path_model)
-    pdb_feas['BindPPI_RF13'] = model_fit.predict(pdb_feas)
-    pdb_infos = pd.read_csv(in_file+'.cleaned',sep='\t')
-    pdb_infos_feas = pd.concat([pdb_infos,pdb_feas],axis=1)
-    pdb_infos_feas = pdb_infos_feas.merge(df_mean[['PDBid','BindPPI_MLP5120']] , on = 'PDBid',how = 'left')
-    pdb_infos_feas['BindPPI_AvgEns'] = (pdb_infos_feas['BindPPI_RF13'] + pdb_infos_feas['BindPPI_MLP5120']) / 2
-    pdb_infos_feas.to_csv(in_file+'.cleaned.outdata.average',sep='\t',index=0)
+    complex_data = []
+    for comp in seq_dict:
+        for partner in seq_dict[comp]:
+            for seq,seq_id in zip(seq_dict[comp][partner],range(len(seq_dict[comp][partner]))):
+                complex_data.append((comp+'_'+partner+'_'+str(seq_id),seq[0]))
 
-model_predict()
+    for i in complex_data:
+        embedding_dict = get_embed([i])
+        embedding_dict[i[0]] = embedding_dict[i[0]].numpy().tolist()
+        with open(f'{embedding_file_path}{i[0]}.json','w') as f:
+            json.dump(embedding_dict,f)
+    all_torch = {}
+    for comp in seq_dict:
+        comp_tensors = []
+        for partner in seq_dict[comp]:
+            partner_tensors = []
+            for seq_id in range(len(seq_dict[comp][partner])):
+                id_use = comp+'_'+partner+'_'+str(seq_id)
+                with open(f'{embedding_file_path}{id_use}.json','r') as fw:
+                    partner_tensor = json.load(fw)
+                    partner_tensors.append(torch.tensor(list(partner_tensor.values())).squeeze(0))
+            comp_tensors.append(torch.mean(torch.stack(partner_tensors), dim=0))
+        all_torch[comp] = torch.cat(comp_tensors,axis = 0) 
+    test_keys = [key for key in all_torch]
+    test_dataset = Dataset(test_keys,all_torch)
+    test_dataloader = DataLoader(test_dataset, batch_size = 32, shuffle=True) 
+    label_list = {}
+    node_dims = 5120
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+    loss_fn = nn.MSELoss()
+    df_mean = pd.DataFrame()
+    for num in range(50):
+        ## 修改读入模型
+        seed = 0
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+        np.random.seed(seed)
+        random.seed(seed) 
+        torch.backends.cudnn.deterministic = True
+        model_test = torch.load('./inputfiles/mlp5120_models/mlp5120_{}.pkl'.format(num),map_location=device)
+        model_test.eval()
+        pred_data = []
+        lable_data = []
+        key_data = []
+        loss_data = []
+        for i_batch, sample_test in enumerate(test_dataloader):
+            graph = sample_test['data'].to(device)
+            graph = torch.squeeze(graph , 1)
+            key = sample_test['key']
+            logits = model_test.forward(graph)
+            pred = torch.squeeze(logits , 1)
+            pred_value = torch.squeeze(logits, 1)
+            for i in list(pred_value.cpu().detach().numpy()):
+                pred_data.append(i)
+            for i in key:
+                key_data.append(i)
+        tmp_df = pd.DataFrame({'key':key_data,'pred':pred_data})
+        df = tmp_df.sort_values(['key']).reset_index(drop=True)
+        df_mean = pd.concat([df_mean,df],axis = 1)
+    df_mean['BindPPI_MLP5120'] = np.average(df_mean['pred'], axis=1)
+    df_mean['PDBid'] = df_mean['key'].iloc[:,:1]
+    df_mean = df_mean[['PDBid','BindPPI_MLP5120']]
+
+
+
+    def model_predict():
+        kinds = ['contacts','inter_sec_stru','nis','ipot','provean','McVol_whole','aaindex1','energy_asa_len']
+        pdb_fea_list = []
+        for kind in kinds:
+            file = pdb+'_'+kind+'.'+suffix
+            pdb_fea = pd.read_csv(pathoutput+'/'+file,sep='\t')
+            pdb_fea_list.append(pdb_fea)
+        pdb_feas = pd.concat(pdb_fea_list,axis=1)[need_feas]
+        model_fit = joblib.load(path_model)
+        pdb_feas['BindPPI_RF13'] = model_fit.predict(pdb_feas)
+        pdb_infos = pd.read_csv(in_file+'.cleaned',sep='\t')
+        pdb_infos_feas = pd.concat([pdb_infos,pdb_feas],axis=1)
+        pdb_infos_feas = pdb_infos_feas.merge(df_mean[['PDBid','BindPPI_MLP5120']] , on = 'PDBid',how = 'left')
+        pdb_infos_feas['BindPPI_AvgEns'] = (pdb_infos_feas['BindPPI_RF13'] + pdb_infos_feas['BindPPI_MLP5120']) / 2
+        pdb_infos_feas.to_csv(in_file+'.cleaned.outdata.average',sep='\t',index=0)
+
+    model_predict()
