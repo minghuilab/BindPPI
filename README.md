@@ -114,7 +114,7 @@ $ conda env create -f environment.yaml
 </font>
 
 ```
-$ wget https://github.com/minghuilab/BindPPI/archive/BindPPI-v1.0.tar.gz
+$ wget https://github.com/minghuilab/BindPPI/releases/download/V1.0/BindPPI-v1.0.tar.gz
 $ tar -zxvf BindPPI-v1.0.tar.gz
 ```
 
