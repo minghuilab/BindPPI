@@ -96,6 +96,7 @@ $ conda env create -f environment.yaml
 ```
 
 11. MLP_{5120///512, 13//416} models: 
+
     For the MLP_{5120///512, 13//416} model, you need to download its models and place it in the ./BindPPI-v1.0/inputfiles/ directory. 
     The download link is https://drive.google.com/drive/folders/1sXAz-SmV2kuWJC8TJY1F1G5MGhm36Z5n.
 
