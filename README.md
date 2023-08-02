@@ -150,19 +150,16 @@ pathprovean = path for PROVEAN software # /usr/local/bin/provean.sh
 ```
 python BindPPI_RF13.py -i 202307091239
 ```
-The predicted values are in the "BindPPI_RF13" column of the "202307091239.input.cleaned.outdata" file located in the output folder "202307091239_out".
 
 #### For model MLP_{5120}
 ```
 python BindPPI_MLP5120.py -f sample_input_sequence.json
 ```
-The file "sample_input_sequence.json" contains input sequences. You can set the output file using the "-o" option. If not set, the predicted values file will be stored in the current directory with the default name "BindPPI_MLP5120_prediction.txt". Note: The first run will automatically download the pre-trained model ESM-2(3B), which may take some time.
 
 #### For model AvgEns
 ```
 python BindPPI_AvgEns.py -i 202307091239
 ```
-The predicted values are in the "BindPPI_AvgEns" column of the "202307091239.input.cleaned.outdata.average" file located in the output folder "202307091239_out".
 
 ## Platform
 
