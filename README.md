@@ -21,7 +21,7 @@ You can download [releases](https://github.com/minghuilab/BindPPI/releases/tag/V
 
 BindPPI requires the following software and packages.
 
-#### Requirements for MLP_{5120} models.
+#### Requirements for MLP_{5120} model.
 
 1. Python3 packages: 
 
@@ -31,7 +31,7 @@ BindPPI requires the following software and packages.
 $ conda env create -f environment.yaml
 ```
 
-#### Requirements for RF_{13}, AvgEns models 
+#### Requirements for RF_{13} and AvgEns models 
 
 1. VMD
 
