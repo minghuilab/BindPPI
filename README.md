@@ -2,7 +2,7 @@
 ## About
 <font size=4>
 
-BindPPI calculates the binding affinities for the protein-protein complexes to evaluate the binding strength quantitatively.It can be used for protein therapeutics discovery, de novo interface design, and computational mutagenesis.BindPPI provides four models for prediction, namely RF_{13}, MLP_{5120}, MLP_{5120///512, 13//416}, and AvgEns. For RF_{13}, MLP_{5120///512, 13//416}, and AvgEns, the input requires the 3D structure of the protein-protein complex, while MLP_{5120} only needs the sequence of the complex for computation.
+BindPPI calculates the binding affinities for the protein-protein complexes to evaluate the binding strength quantitatively.It can be used for protein therapeutics discovery, de novo interface design, and computational mutagenesis.BindPPI provides three models for prediction, namely RF_{13}, MLP_{5120} and AvgEns. For RF_{13} and AvgEns, the input requires the 3D structure of the protein-protein complex, while MLP_{5120} only needs the sequence of the complex for computation.
 
 </font>
 
@@ -31,7 +31,7 @@ BindPPI requires the following software and packages.
 $ conda env create -f environment.yaml
 ```
 
-#### Requirements for RF_{13}, MLP_{5120///512, 13//416}，AvgEns models 
+#### Requirements for RF_{13}, AvgEns models 
 
 1. VMD
 
@@ -95,12 +95,6 @@ $ conda env create -f environment.yaml
 $ conda env create -f environment.yaml
 ```
 
-11. MLP_{5120///512, 13//416} models: 
-
-    For the MLP_{5120///512, 13//416} model, you need to download its models and place it in the ./BindPPI-v1.0/inputfiles/ directory. 
-    
-    The download link is https://drive.google.com/drive/folders/1sXAz-SmV2kuWJC8TJY1F1G5MGhm36Z5n.
-
 </font>
 
 ### II. INSTALLATION INSTRUCTIONS
@@ -130,7 +124,7 @@ $ cd BindPPI-v1.0/
 
 <font size=4>
 
-4. Change the path parameters in BindPPI_RF13.py,BindPPI_5120-512-13-416.py,BindPPI_AvgEns.py:
+4. Change the path parameters in BindPPI_RF13.py,BindPPI_AvgEns.py:
 
 </font>
 
@@ -160,12 +154,6 @@ The predicted values are in the "BindPPI_RF13" column of the "202307091239.input
 python BindPPI_MLP5120.py -f sample_input_sequence.json
 ```
 The file "sample_input_sequence.json" contains input sequences. You can set the output file using the "-o" option. If not set, the predicted values file will be stored in the current directory with the default name "BindPPI_MLP5120_prediction.txt". Note: The first run will automatically download the pre-trained model ESM-2(3B), which may take some time.
-
-#### For model MLP_{5120///512, 13//416}
-```
-python BindPPI_5120-512-13-416.py -i 202307091239
-```
-The predicted values are in the "BindPPI_MLP5120-512-13-416" column of the "202307091239.input.MLP5120-512-13-416" file located in the output folder "202307091239_out".
 
 #### For model AvgEns
 ```
