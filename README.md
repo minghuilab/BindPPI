@@ -86,14 +86,14 @@ $ conda env create -f environment.yaml
    This is available on the FoldX website.
 
    http://foldxsuite.crg.eu/
-   
+
 10. Python 3 packages
 
-    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
+    Change the environment path in environment.yaml
+    
+    prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
 
 ```
-Change the path parameters in environment.yaml
-workdir = Your working directory # '/data/jiang/tools/bindppi_test/' ##need change
 $ conda env create -f environment.yaml
 ```
 
