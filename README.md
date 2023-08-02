@@ -28,7 +28,7 @@ BindPPI requires the following software and packages.
    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
 ```
-prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
+prefix: path for environment # /data/jiang/anaconda3/envs/myenv
 $ conda env create -f environment.yaml
 ```
 
@@ -94,7 +94,7 @@ $ conda env create -f environment.yaml
     To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
 ```
-prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
+prefix: path for environment # /data/jiang/anaconda3/envs/myenv
 $ conda env create -f environment.yaml
 ```
 
@@ -132,16 +132,16 @@ $ cd BindPPI-v1.0/
 </font>
 
 ```
-workdir = Your working directory # '/data/jiang/tools/bindppi_test/' ##need change, not contain capital letters
-pathinput = path for inputfiles directory # '/data/jiang/tools/bindppi_test/inputfiles' ##need change, not contain capital letters
-pathvmd = path for VMD software # '/usr/local/bin/vmd' ##need change
-pathcharmm = path for CHARMM software # '/usr/local/bin/charmm' ##need change
-pathnamd2 = path for NAMD software # '/usr/local/bin/namd2' ##need change
-pathdssp = path for DSSP software # '/usr/local/bin/mkdssp' ##need change
-pathipot = path for iPot software # '/data/jiang/tools/iPot/' ##need change
-pathmcvol = path for McVol software #'/data/jiang/tools/McVol.rev/' ##need change
-pathpdb2pqr30 = path for PDB2PQR software #'/data/jiang/anaconda3/bin/pdb2pqr30' ##need change
-pathprovean = path for PROVEAN software # '/usr/local/bin/provean.sh' ##need change
+workdir = Your working directory 
+pathinput = path for inputfiles directory # /data/jiang/tools/bindppi_test/inputfiles
+pathvmd = path for VMD software # /usr/local/bin/vmd
+pathcharmm = path for CHARMM software # /usr/local/bin/charmm
+pathnamd2 = path for NAMD software # /usr/local/bin/namd2
+pathdssp = path for DSSP software # /usr/local/bin/mkdssp
+pathipot = path for iPot software # /data/jiang/tools/iPot/
+pathmcvol = path for McVol software # /data/jiang/tools/McVol.rev/
+pathpdb2pqr30 = path for PDB2PQR software # /data/jiang/anaconda3/bin/pdb2pqr30
+pathprovean = path for PROVEAN software # /usr/local/bin/provean.sh
 ```
 
 ### III. RUNNING BindPPI
