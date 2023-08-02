@@ -30,7 +30,7 @@ RF_{13}: The binding affinities predicted by the model of RF_{13}.
 
 RF_{174}: The binding affinities predicted by the model of RF_{174}.
 
-RF_{1428}: The predicted values from model RF_{1428}.RF_{1428} is the Random forest model using 1428 handcrafted features.
+RF_{1428}: The predicted values from model RF_{1428}.
 
 XGBoost_{13}: The binding affinities predicted by the model of XGBoost_{13}.
 
