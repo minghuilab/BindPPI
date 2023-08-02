@@ -70,9 +70,9 @@ MLP_{5120, 174}: The predicted values from model MLP_{5120, 174}.MLP_{5120, 174}
 
 MLP_{5120, 1428}: The predicted values from model MLP_{5120, 1428}.MLP_{5120, 1428} is the Multilayer perceptron model using a 5120-dimensional embedding feature and 1428 handcrafted features.	
 
-MLP_{5120////256, 13/208}: The predicted values from model MLP_{5120////256, 13/208}.MLP_{5120////256, 13/208} is the Multilayer perceptron model involves increasing the dimensionality of each handcrafted feature from 1 to 16 using one MLP layers, and reducing the dimensionality of the 5120-dimensional complex embedding to 256 using four MLP layers. Subsequently, the up-sampled and down-sampled features are concatenated as inputs for the MLP architecture. 
+MLP_{5120////256, 13/208}: The predicted values from model MLP_{5120////256, 13/208}.MLP_{5120////256, 13/208} is the Multilayer perceptron model involves increasing the dimensionality of each handcrafted feature from 1 to 16 using one fully connected layer, and reducing the dimensionality of the 5120-dimensional complex embedding to 256 using four fully connected layers. Subsequently, the up-sampled and down-sampled features are concatenated as inputs for the MLP architecture. 
 
-MLP_{5120///512, 13//416}: The predicted values from model MLP_{5120///512, 13//416}.MLP_{5120///512, 13//416} is the Multilayer perceptron model involves increasing the dimensionality of each handcrafted feature from 1 to 32 using two MLP layers, and reducing the dimensionality of the 5120-dimensional complex embedding to 512 using three MLP layers. Subsequently, the up-sampled and down-sampled features are concatenated as inputs for the MLP architecture.
+MLP_{5120///512, 13//416}: The predicted values from model MLP_{5120///512, 13//416}.MLP_{5120///512, 13//416} is the Multilayer perceptron model involves increasing the dimensionality of each handcrafted feature from 1 to 32 using two fully connected layers, and reducing the dimensionality of the 5120-dimensional complex embedding to 512 using three fully connected layers. Subsequently, the up-sampled and down-sampled features are concatenated as inputs for the MLP architecture.
 
 PPI-Affinity: The predicted values from PPI-Affinity.
 
