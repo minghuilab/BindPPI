@@ -91,9 +91,10 @@ $ conda env create -f environment.yaml
 
     Change the environment path in environment.yaml
     
-    prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
 
 ```
+prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
+
 $ conda env create -f environment.yaml
 ```
 
