@@ -25,11 +25,13 @@ BindPPI requires the following software and packages.
 
 1. Python3 packages: 
 
-    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
-
+   To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
+    
 ```
+prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
 $ conda env create -f environment.yaml
 ```
+
 
 #### Requirements for RF_{13} and AvgEns models 
 
@@ -89,12 +91,10 @@ $ conda env create -f environment.yaml
 
 10. Python 3 packages
 
-    Change the environment path in environment.yaml
+    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
-
 ```
 prefix: path for environment # ‘/data/jiang/anaconda3/envs/myenv’ needs change
-
 $ conda env create -f environment.yaml
 ```
 
