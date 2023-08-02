@@ -2,7 +2,7 @@
 ## About
 <font size=4> 
   
-Before running BindPPI models for RF_{13} and AvgEns, you need to create a folder that includes two input files.
+Before running BindPPI models of RF_{13} and AvgEns, you need to create a folder that includes two input files.
 
 (see the example of 202307091239)
 
