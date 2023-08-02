@@ -23,7 +23,7 @@ BindPPI requires the following software and packages.
 
 #### Requirements for MLP_{5120} model.
 
-1. Python3 packages: 
+1. Python 3 packages
 
    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
