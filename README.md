@@ -127,7 +127,7 @@ $ cd BindPPI-v1.0/
 
 <font size=4>
 
-4. Change the path parameters in BindPPI_RF13.py,BindPPI_AvgEns.py:
+4. Change the path parameters in BindPPI_RF13.py and BindPPI_AvgEns.py:
 
 </font>
 
