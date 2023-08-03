@@ -25,7 +25,7 @@ Before running BindPPI model for MLP_{5120}, you just need to create a JSON file
 
   The columns are separated by tabs.
 
-3. '.seq' files for each chain of the complex(2J12_A.seq,2J12_B.seq).
+3. '.seq' files for each chain of the complex (2J12_A.seq,2J12_B.seq).
 
 </font>
 
