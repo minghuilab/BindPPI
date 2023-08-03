@@ -2,7 +2,7 @@
 ## About
 <font size=4> 
   
-Before running BindPPI models of RF_{13} and AvgEns, you need to create a folder that includes two input files.
+Before running BindPPI models of RF_{13}, you need to create a folder that includes two input files. And for the AvgEns model, in addition to the two files mentioned earlier, you also need additional '.seq' files for each chain of the complex.
 
 (see the example of 202307091239)
 
@@ -24,6 +24,8 @@ Before running BindPPI model for MLP_{5120}, you just need to create a JSON file
 - Partner2: the selected protein chains of Partner2 that will be taken into account during the calculation.If there are multiple chains, use a dot to separate them, for example, A_1.B_1
 
   The columns are separated by tabs.
+
+3. '.seq' files for each chain of the complex(2J12_A.seq,2J12_B.seq).
 
 </font>
 
