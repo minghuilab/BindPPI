@@ -42,7 +42,7 @@ if embedding_file_path is None:
 os.makedirs(embedding_file_path, exist_ok=True)
 
 if output_file is None:
-    output_file = os.path.join(os.getcwd(), 'MLP5120_prediction.txt')
+    output_file = os.path.join(os.getcwd(), 'sequence_based/MLP5120_prediction.txt')
 
 with open(json_file_path, 'r') as fw:
     seq_dict = json.load(fw)
