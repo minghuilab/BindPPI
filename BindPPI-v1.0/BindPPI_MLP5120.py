@@ -23,7 +23,7 @@ warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser(description='Process input_sequence JSON file path.')
 parser.add_argument('-f', '--file', type=str, help='Path to input_sequence JSON file')
 parser.add_argument('-d', '--dir', type=str, help='Path to save the embedding JSON file')
-parser.add_argument('-o', '--output', type=str, help='the predition file')
+parser.add_argument('-o', '--output', type=str, help='Path to save the predition file')
 
 args = parser.parse_args()
 
