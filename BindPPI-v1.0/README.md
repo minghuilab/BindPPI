@@ -20,8 +20,8 @@ Before running BindPPI model for MLP_{5120}, you just need to create a JSON file
 2. The file containing complex information (structure_based_job1.input), who's name must be consistent with the input folder name.
 
 - PDBfile: coordinate file of a protein structure.
-- Partner1: the selected protein chains of Partner1 that will be taken into account during the calculation.If there are multiple chains, use a dot to separate them, for example, A_1.B_1
-- Partner2: the selected protein chains of Partner2 that will be taken into account during the calculation.If there are multiple chains, use a dot to separate them, for example, A_1.B_1
+- Partner1: the selected protein chains of Partner1 that will be taken into account during the calculation.If there are multiple chains, separate them with dots. For example, use 'A_1.B_1' for multiple chains.
+- Partner2: the selected protein chains of Partner2 that will be taken into account during the calculation.If there are multiple chains, separate them with dots. For example, use 'A_1.B_1' for multiple chains.
 
   The columns are separated by tabs.
 
