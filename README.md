@@ -28,7 +28,7 @@ BindPPI requires the following software and packages.
    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
 ```sh
-prefix: path for environment # /data/jiang/anaconda3/envs/myenv
+# prefix: path for environment # /data/jiang/anaconda3/envs/myenv
 $ conda env create -f environment.yaml
 ```
 
