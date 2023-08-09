@@ -12,6 +12,7 @@ Before running BindPPI model for MLP_{5120}, you just need to create a JSON file
 (The specific format is as follows, and you can also refer to the example provided in "MLP5120_example/sample_input_sequence.json".)
 
 ## The format of "sample_input_sequence.json"
+For each complex, there are two partners (Partner1 and Partner2) listed under each complex, with each partner containing a sequence list that can comprise single or multiple chain sequences.
 ```python
 {
   'Complex1': {
