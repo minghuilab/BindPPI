@@ -27,7 +27,7 @@ BindPPI requires the following software and packages.
 
    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
-```
+```sh
 prefix: path for environment # /data/jiang/anaconda3/envs/myenv
 $ conda env create -f environment.yaml
 ```
@@ -131,7 +131,7 @@ $ cd BindPPI-v1.0/
 
 </font>
 
-```
+```python
 workdir = Your working directory 
 pathinput = path for inputfiles directory # /data/jiang/tools/bindppi_test/inputfiles
 pathvmd = path for VMD software # /usr/local/bin/vmd
@@ -147,17 +147,17 @@ pathprovean = path for PROVEAN software # /usr/local/bin/provean.sh
 ### III. RUNNING BindPPI
 
 #### For model RF_{13}
-```
+```sh
 python BindPPI_RF13.py -i structure_based_job1
 ```
 
 #### For model MLP_{5120}
-```
+```sh
 python BindPPI_MLP5120.py -f ./sequence_based/sample_input_sequence.json
 ```
 
 #### For model AvgEns
-```
+```sh
 python BindPPI_AvgEns.py -i structure_based_job1
 ```
 
