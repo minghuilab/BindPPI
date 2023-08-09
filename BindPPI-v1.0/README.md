@@ -38,7 +38,7 @@ Before running BindPPI model for MLP_{5120}, you just need to create a JSON file
         ]
     }
 }
-  
+```
 </font>
 
 ## Three input files in the folder of structure_based_job1
