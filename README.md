@@ -131,7 +131,7 @@ $ cd BindPPI-v1.0/
 
 </font>
 
-```python
+```
 workdir = Your working directory 
 pathinput = path for inputfiles directory # /data/jiang/tools/bindppi_test/inputfiles
 pathvmd = path for VMD software # /usr/local/bin/vmd
