@@ -148,17 +148,17 @@ pathprovean = path for PROVEAN software # /usr/local/bin/provean.sh
 
 #### For model RF_{13}
 ```sh
-python BindPPI_RF13.py -i structure_based_job1
+python BindPPI_RF13.py -i 1a2k
 ```
 
 #### For model MLP_{5120}
 ```sh
-python BindPPI_MLP5120.py -f ./sequence_based/sample_input_sequence.json
+python BindPPI_MLP5120.py -f ./sequence_based/sample_input_sequence.json -o your_output_file
 ```
 
 #### For model AvgEns
 ```sh
-python BindPPI_AvgEns.py -i structure_based_job1
+python BindPPI_AvgEns.py -i 1a2k
 ```
 
 ## Platform
