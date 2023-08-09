@@ -2,7 +2,8 @@
 ## About
 <font size=4> 
   
-Before running BindPPI models of RF_{13}, you need to create a folder that includes two input files. And for the AvgEns model, in addition to the two files mentioned earlier, you also need additional '.seq' files for each chain of the complex.
+To run RF_{13}, you need to create a folder and prepare two input files (refer to the files structure_based_job1.input and 2J12.pdb1 in the structure_based_job1 folder.
+To run AvgEns, you need to create a folder and prepare three input files (refer to the files structure_based_job1.input, 2J12.pdb1, and sample_input_sequence.json in the structure_based_job1 folder.
 
 (see the example of structure_based_job1)
 
