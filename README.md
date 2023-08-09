@@ -93,8 +93,8 @@ $ conda env create -f environment.yaml
 
     To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
     
-```
-prefix: path for environment # /data/jiang/anaconda3/envs/myenv
+```sh
+# prefix: path for environment # /data/jiang/anaconda3/envs/myenv
 $ conda env create -f environment.yaml
 ```
 
