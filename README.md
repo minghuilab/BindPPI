@@ -153,7 +153,7 @@ python BindPPI_RF13.py -i 1a2k
 
 #### For model MLP_{5120}
 ```sh
-python BindPPI_MLP5120.py -f ./sequence_based/sample_input_sequence.json -o your_output_file
+python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
 ```
 
 #### For model AvgEns
