@@ -17,19 +17,19 @@ Before running BindPPI model for MLP_{5120}, you just need to create a JSON file
   'Complex1': {
         'Partner1': [
             			['IVGGYTCAANSIPYQQLQGIVVCNYVNWIQQTIAAN']
-              		],
+                    ],
         'Partner2': [
             			['KKVCACPKILKPVCGSDGRTYANSCIARCNGVSIKS']
-              		]
+                    ]
     			},
   'Complex2': {
         'Partner1': [
             			['DIKMTQSPSSMYASLGERVTKTSTSPIVKSFNRNEC'],
             			['EIQLQQSGAELVRPGALVKLSCKASAVLQSDLASSI']
-                  ],
+                    ],
         'Partner2': [
             			['SGTTNTVAAYNLTWKSTNFKTILESSGKKTAKTNTN']
-                  ]
+                    ]
     			}
 }
 ```
