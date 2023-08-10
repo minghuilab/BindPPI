@@ -3,11 +3,12 @@
 <font size=4> 
   
 To run RF_{13}, you need to create a folder and prepare two input files (refer to the files 1a2k.input and 1A2K.pdb in the 1a2k folder).
+
 To run AvgEns, you need to create a folder and prepare three input files (refer to the files 1a2k.input, 1A2K.pdb, and 1a2k.json in the 1a2k folder).
 
 (see the example of 1a2k)
 
-Before running BindPPI model for MLP_{5120}, you just need to create a JSON file for input sequences of every complexs.
+To run MLP_{5120}, you just need to create a JSON file for input sequences of every complexs.
 
 (The specific format is as follows, and you can also refer to the example provided in "MLP5120_example/sample_input_sequence.json".)
 
