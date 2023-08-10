@@ -45,7 +45,7 @@ $ conda env create -f environment.yaml
 
    This is available on the CHARMM website.
 
-   https://www.charmm.org/charmm/
+   https://www.charmm.org/
 
 3. NAMD
 
