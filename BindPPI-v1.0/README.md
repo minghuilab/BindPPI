@@ -41,7 +41,7 @@ For each complex, there are two partners (Partner1 and Partner2) listed under ea
 
   The columns are separated by tabs.
 
-3. The '.json' file containing complex sequence (1a2k.json), who's name must be consistent with the input folder name. The specific format is consistent with "sample_input_sequence.json".
+3. The JSON file containing complex sequence (1a2k.json), who's name must be consistent with the input folder name. The specific format is consistent with "sample_input_sequence.json".
 
 </font>
 
