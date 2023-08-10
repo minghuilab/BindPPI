@@ -78,8 +78,6 @@ in_file = jobpath + '/' + jobid + '.input'
 
 
 need_feas = ['L_p1/SA_p1','L_p2/SA_p2','P_Helix','P_Sheet','SA_p1','SA_p2','DE_elec','P_CS','E_ce','N_AP','S_AA','P_Charge','N_Water']
-len(need_feas) 
-
 
 H_flag = 'withoutH'
 distance_cutoff = '6'
