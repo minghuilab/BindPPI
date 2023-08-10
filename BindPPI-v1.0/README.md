@@ -8,7 +8,7 @@ To run AvgEns, you need to create a folder and prepare three input files (refer 
 
 (see the example of 1a2k)
 
-To run MLP_{5120}, you just need to create a JSON file for input sequences of every complexs.
+To run MLP_{5120}, you just need to create a JSON file containing the input sequences for each complex.
 
 (The specific format is as follows, and you can also refer to the example provided in "MLP5120_example/sample_input_sequence.json".)
 
