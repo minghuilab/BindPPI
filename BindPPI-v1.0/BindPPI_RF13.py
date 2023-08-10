@@ -29,7 +29,7 @@ aa_cpa = {'K':'C', 'R':'C', 'D':'C', 'E':'C',###charge
           'H':'P', 'S':'P', 'T':'P', 'N':'P', 'Q':'P', 'C':'P', 'Y':'P',###polar
           'A':'A', 'G':'A', 'I':'A', 'L':'A', 'F':'A', 'P':'A', 'V':'A', 'M':'A', 'W':'A'}###apolar
 
-#jobid = '2022060302'
+#jobid = '1a2k'
 jobid = ''
 myopts, args = getopt.getopt(sys.argv[1:], "i:")
 for o, a in myopts:
