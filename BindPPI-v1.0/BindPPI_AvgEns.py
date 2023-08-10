@@ -794,29 +794,10 @@ else:
 
     embedding_file_path = pathoutput + '/'
 
-    seq_dict = {}
-    seq_dict[pdb] = {}
-    p1_seq = []
-    p2_seq = []
-    for chain in p1:
-        with open(jobpath+'/'+pdb+'_'+chain+'.seq','r') as f_seq:
-            lines = f_seq.readlines()
-            for line in lines:
-                if line.startswith('>'):
-                    seq = lines[lines.index(line)+1].strip()
-                    break
-            p1_seq.append([seq])
-    seq_dict[pdb]['p1'] = p1_seq
-    for chain in p2:
-        with open(jobpath+'/'+pdb+'_'+chain+'.seq','r') as f_seq:
-            lines = f_seq.readlines()
-            for line in lines:
-                if line.startswith('>'):
-                    seq = lines[lines.index(line)+1].strip()
-                    break
-        p2_seq.append([seq])
-    seq_dict[pdb]['p2'] = p2_seq
+    json_file_path = jobpath + '/' + jobid + '.json'
 
+    with open(json_file_path, 'r') as fw:
+        seq_dict = json.load(fw)
 
     model_name = "esm2_t36_3B_UR50D"
     model, alphabet = esm.pretrained.esm2_t36_3B_UR50D()
