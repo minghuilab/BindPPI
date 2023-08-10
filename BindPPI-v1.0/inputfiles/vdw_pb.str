@@ -1,0 +1,33 @@
+! This stream calculates elec using PB and vdw interaction for a complex
+
+set gammaP   0.00542     ! for Gasa (non-polar dGsolv)
+set betaP    0.92        ! for Gasa
+set rsol     1.4         ! solvent probe radius
+
+set EpsG    = 1.0
+
+update cutnb 999 switch vswitch eps @EpsG 
+
+! calculate the vdw energy between A and B
+
+interaction sele A end sele B end 
+set vdwENER   = ?vdw
+set elecENER  = ?elec
+
+! molecular surface (MS) of the complex
+coor surface rprobe @rsol select A .or. B end
+set MSac = ?area
+
+! molecular surface (MS) of A
+coor surface rprobe @rsol select A end
+set MSa  = ?area
+
+! molecular surface (MS) of B
+coor surface rprobe @rsol select B end
+set MSc  = ?area
+
+! The difference in MS between the complex and the free proteins, is the
+! surface buried upon complex formation, and is stored of deltaMS.
+
+calc DeltaMS =  @MSac - @MSa - @MSc
+stop
