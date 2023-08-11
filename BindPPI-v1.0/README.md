@@ -10,6 +10,23 @@ To run AvgEns, you need to create a folder and prepare three input files (refer 
 To run MLP_{5120}, you simply need to create a JSON file containing the input sequences for each complex (refer to the file sample_input_sequence.json in the MLP5120_example folder).
 
 
+## Three input files in the folder of 1a2k
+<font size=4> 
+
+1. 1A2K.pdb: The 3D structure of a protein complex, which can be obtained from the Protein Data Bank (PDB) or created by the user.
+
+2. 1a2k.input: The input file name must be consistent with the name of the input folder.
+
+- PDBfile: coordinate file of a complex structure.
+- Partner1: includes the selected protein chains for interaction partner 1 for calculation. If there are multiple chains, please separate them using periods.
+- Partner2: includes the selected protein chains for interaction partner 2 for calculation. If there are multiple chains, please separate them using periods.
+  The columns are separated by tabs.
+
+3. 1a2k.json: includes the protein sequence of both Partner1 and Partner2. The input file name must be consistent with the name of the input folder.
+
+</font>
+
+
 ## The format of "sample_input_sequence.json"
 For each complex, there are two partners (Partner1 and Partner2) listed under each complex, with each partner containing a sequence list that can comprise single or multiple chain sequences.
 ```python
@@ -26,22 +43,3 @@ For each complex, there are two partners (Partner1 and Partner2) listed under ea
 ```
 
 </font>
-
-## Three input files in the folder of 1a2k
-<font size=4> 
-
-1. The 3D structure of a protein (1A2K.pdb), which can be obtained from the Protein Data Bank (PDB) or created by the user.
-
-2. The file containing complex information (1a2k.input), who's name must be consistent with the input folder name.
-
-- PDBfile: coordinate file of a protein structure.
-- Partner1: the selected protein chains of Partner1 that will be taken into account during the calculation. If there are multiple chains, separate them with dots. For example, use 'A_1.B_1' for multiple chains.
-- Partner2: the selected protein chains of Partner2 that will be taken into account during the calculation. If there are multiple chains, separate them with dots. For example, use 'A_1.B_1' for multiple chains.
-
-  The columns are separated by tabs.
-
-3. The JSON file containing complex sequence (1a2k.json), who's name must be consistent with the input folder name. The specific format is consistent with "sample_input_sequence.json".
-
-</font>
-
-
