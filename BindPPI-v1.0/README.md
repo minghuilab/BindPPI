@@ -22,9 +22,9 @@ To run MLP_{5120}, you simply need to create a JSON file containing the input se
 - Partner2: includes the selected protein chains for interaction partner 2 for calculation. If there are multiple chains, please separate them using periods.
   The columns are separated by tabs.
 
-3. 1a2k.json: includes the protein sequence of both Partner1 and Partner2. The input file name must be consistent with the name of the input folder. If there are multiple chains, please separate them using commas.
+3. 1a2k.json: includes the protein sequences of both Partner1 and Partner2. The input file name must be consistent with the name of the input folder. If there are multiple chains, please separate them using commas.
    
-5. sample_input_sequence.json: includes the protein sequence of both Partner1 and Partner2. 
+5. sample_input_sequence.json: includes the protein sequences of both Partner1 and Partner2. If there are multiple chains, please separate them using commas.
 
 </font>
 
