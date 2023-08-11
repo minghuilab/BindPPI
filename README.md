@@ -9,7 +9,7 @@ BindPPI calculates binding affinities for protein-protein interactions. It inclu
 ## Source code releases
 <font size=4> 
   
-You can download [releases](https://github.com/minghuilab/BindPPI/releases/tag/V1.0) from Github.
+You can download [releases](https://github.com/minghuilab/BindPPI/releases/download/v1.0/BindPPI-v1.0.tar.gz) from Github.
 
 </font>
 
