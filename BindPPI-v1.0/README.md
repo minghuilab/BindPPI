@@ -6,11 +6,9 @@ To run RF_{13}, you need to create a folder and prepare two input files (refer t
 
 To run AvgEns, you need to create a folder and prepare three input files (refer to the files 1a2k.input, 1A2K.pdb, and 1a2k.json in the 1a2k folder).
 
-(see the example of 1a2k)
 
-To run MLP_{5120}, you just need to create a JSON file containing the input sequences for each complex.
+To run MLP_{5120}, you simply need to create a JSON file containing the input sequences for each complex (refer to the file sample_input_sequence.json in the MLP5120_example folder).
 
-(The specific format is as follows, and you can also refer to the example provided in "MLP5120_example/sample_input_sequence.json".)
 
 ## The format of "sample_input_sequence.json"
 For each complex, there are two partners (Partner1 and Partner2) listed under each complex, with each partner containing a sequence list that can comprise single or multiple chain sequences.
