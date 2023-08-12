@@ -9,7 +9,7 @@ BindPPI calculates binding affinities for protein-protein interactions. It inclu
 ## Source code releases
 <font size=4> 
   
-You can download [releases](https://github.com/minghuilab/BindPPI/releases/download/v1.0/bindppi-1.0.tar.gz) from Github.
+You can download [releases](https://github.com/minghuilab/BindPPI/releases/download/v1.0/bindppi.tar.gz) from Github.
 
 </font>
 
@@ -111,8 +111,8 @@ $ conda env create -f environment.yaml
 </font>
 
 ```sh
-$ wget https://github.com/minghuilab/BindPPI/releases/download/v1.0/bindppi-1.0.tar.gz
-$ tar -zxvf bindppi-v1.0.tar.gz
+$ wget https://github.com/minghuilab/BindPPI/releases/download/v1.0/bindppi.tar.gz
+$ tar -zxvf bindppi.tar.gz
 ```
 
 <font size=4>
@@ -122,7 +122,7 @@ $ tar -zxvf bindppi-v1.0.tar.gz
 </font>
 
 ```
-$ cd bindppi-v1.0/
+$ cd bindppi/
 ```
 
 <font size=4>
