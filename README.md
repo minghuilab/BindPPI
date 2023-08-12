@@ -122,7 +122,7 @@ $ tar -zxvf bindppi-v1.0.tar.gz
 </font>
 
 ```
-$ cd BindPPI-v1.0/
+$ cd bindppi-v1.0/
 ```
 
 <font size=4>
