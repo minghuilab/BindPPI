@@ -640,7 +640,6 @@ def run_McVol():
         print('pdb2pqr run error :%s'%(jobid))
 
     os.chdir(pathoutput)
-    os.system('rm McVol_%s_whole.out'%(pdb))
     os.system('cp %sTest/all.setup %s/%s_min.setup'%(pathmcvol,pathoutput,pdb))
     cmd= '%ssrc/McVol %s_min > McVol_%s_whole.out'%(pathmcvol,pdb,pdb)
     cmdlist = deque([cmd])
