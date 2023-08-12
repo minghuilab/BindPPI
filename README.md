@@ -132,7 +132,7 @@ $ cd BindPPI-v1.0/
 </font>
 
 ```
-workdir = Your working directory 
+workdir = Your working directory # Please ensure that the workdir contains only lowercase letters.
 pathinput = path for inputfiles directory # /data/jiang/tools/bindppi_test/inputfiles
 pathvmd = path for VMD software # /usr/local/bin/vmd
 pathcharmm = path for CHARMM software # /usr/local/bin/charmm
