@@ -1,0 +1,155 @@
+ Parameter: PATH <- "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME <- "1A2K"
+ Parameter: STARTFRAME <- "100"
+ Parameter: PATHINPUT <- "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+                (CHARMM) - Free Version 41b2   February 15, 2017                
+                                Revision unknown                                
+       Copyright(c) 1984-2014  President and Fellows of Harvard College
+                              All Rights Reserved
+     Current operating system: Linux-3.10.0-1160.88.1.el7.x86_64(x86_64)@gp     
+                 Created on 11/9/23 at 10:32:28 by user: jiang       
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * THIS EXAMPLE PRODUCE THE FRAME.
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    bomlev -2
+  
+ CHARMM>     
+  
+ CHARMM>    set pathpara @pathinput
+ Parameter: PATHINPUT -> "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+ Parameter: PATHPARA <- "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+  
+ CHARMM>     
+  
+ CHARMM>    ! Read in Topology and  Parameter files
+ CHARMM>    read rtf card name @pathpara/top_all36_prot.rtf
+ Parameter: PATHPARA -> "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/inputfiles/top_all36_prot.rtf::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> *>>>>>>>>CHARMM36 ALL-HYDROGEN TOPOLOGY FILE FOR PROTEINS <<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> MAY 2011 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read param card name @pathpara/par_all36_prot.prm
+ Parameter: PATHPARA -> "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/inputfiles/par_all36_prot.prm::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> *>>>> CHARMM36 ALL-HYDROGEN PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> FEB. 2012 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    ! Get psf and coordinates
+ CHARMM>    read psf card name @path/@protname_charmm.psf
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_charmm.psf::
+ MAINIO> Protein structure file being read from unit  90.
+ TITLE>  * PSF
+ TITLE>  *  DATE:    11/ 9/23     10:32:23      CREATED BY USER: jiang
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        3   Number of residues   =      444
+         Number of atoms         =     7103   Number of groups     =     2169
+         Number of bonds         =     7195   Number of angles     =    13004
+         Number of dihedrals     =    19087   Number of impropers  =     1279
+         Number of cross-terms   =      438
+         Number of HB acceptors  =      663   Number of HB donors  =      778
+         Number of NB exclusions =        0   Total charge =   -4.00000
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read coor card name @path/@protname_charmm.crd
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_charmm.crd::
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE> * COORDS
+ TITLE> *  DATE:    11/ 9/23     10:32:23      CREATED BY USER: JIANG
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    !!!!!!!!!!!!!! analysis of trajectory !!!!!!!!!!!!!!!!!
+ CHARMM>     
+  
+ CHARMM>    OPEN READ UNIT 35 FILE NAME @path/@protname_min.dcd
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_min.dcd::
+ OPNLGU> Unit 35 opened for READONLY access to /data/jiang/affi/bindppi/1a2k_out/1a2k_min.dcd
+  
+ CHARMM>    TRAJECTORY FIRSTU 35 NUNIT 1 BEGIN @startframe
+ Parameter: STARTFRAME -> "100"
+ TRAJ: INITIATING READ OF A TRAJECTORY, OPTIONS;
+    FIRSTU =  35 NUNIT =   1 SKIP =     1
+  
+ CHARMM>     
+  
+ CHARMM>    TRAJ READ
+
+ READING TRAJECTORY FROM UNIT  35
+   NUMBER OF COORDINATE SETS IN FILE:           1
+   NUMBER OF PREVIOUS DYNAMICS STEPS:         100
+   FREQUENCY FOR SAVING COORDINATES:          100
+   NUMBER OF STEPS FOR CREATION RUN:          100
+
+ TITLE>  REMARKS FILENAME=/data/jiang/affi/bindppi/1a2k_out/1a2k_min.dcd CREATED BY NAMD
+ TITLE>  REMARKS DATE: 11/09/23 CREATED BY USER: jiang
+ TITLE>  *
+ *****  WARNING  ***** SKIP=     1 WAS NOT A MULTIPLE OF THE FILE INTERVAL=   100
+ IT HAS BEEN RESET TO   100
+
+    1 CORD RECORDS READ FROM   1 UNITS STARTING WITH UNIT  35
+ RUNNING FROM STEP     100 TO      100 SKIPPING  100 STEPS BETWEEN RECORDS
+ Time step was  2.0454830E-02 AKMA time units.
+  
+ CHARMM>    write coor card name @path/@protname_min.crd
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_min.crd::
+ RDTITL> WRITE COOR PDB NAME /DATA/JIANG/AFFI/BINDPPI/1A2K_OUT/1A2K_MIN.PDB
+ RDTITL> No title read.
+ VCLOSE: Closing unit   90 with status "KEEP"
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    write coor pdb name @path/@protname_min.pdb
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_min.pdb::
+ RDTITL>  
+ RDTITL> No title read.
+  Write CHARMM-pdb format
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+ VCLOSE: Closing unit   35 with status "KEEP"
+$$$$$$  New timer profile $$$$$
+ Total time                      0.43 Other:            0.00
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.43  SECONDS 
+                         CPU TIME:     0.32  SECONDS 

@@ -1,0 +1,15 @@
+## PROVEAN v1.1 output ##
+# Query sequence file:	/data/jiang/affi/bindppi/1a2k_out/1A2K_A.seq
+# Variation file:	/data/jiang/affi/bindppi/1a2k_out/1A2K_A.var
+# Protein database:	/data/software/blastdb/nr
+[10:33:10] searching related sequences...
+[10:33:13] clustering subject sequences...
+# Number of clusters:	30
+# Number of supporting sequences used:	137
+[10:33:13] computing delta alignment scores...
+## PROVEAN scores ##
+# VARIATION	SCORE
+A67A	0.000
+Q85A	-3.886
+T66A	-3.336
+V83A	-2.030

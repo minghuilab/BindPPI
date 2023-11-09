@@ -1,0 +1,240 @@
+ Parameter: PATH <- "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME <- "1A2K"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+                (CHARMM) - Free Version 41b2   February 15, 2017                
+                                Revision unknown                                
+       Copyright(c) 1984-2014  President and Fellows of Harvard College
+                              All Rights Reserved
+     Current operating system: Linux-3.10.0-1160.88.1.el7.x86_64(x86_64)@gp     
+                 Created on 11/9/23 at 10:32:28 by user: jiang       
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * THIS EXAMPLE CALCULATES THE THE BINDING ENERGY.
+ RDTITL> *
+  
+ CHARMM>    bomlev -2
+  
+ CHARMM>     
+  
+ CHARMM>    set pathpara /data/jiang/affi/bindppi/inputfiles
+ Parameter: PATHPARA <- "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+  
+ CHARMM>     
+  
+ CHARMM>    ! Read in Topology and  Parameter files
+ CHARMM>    read rtf card name @pathpara/top_all36_prot.rtf
+ Parameter: PATHPARA -> "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/inputfiles/top_all36_prot.rtf::
+ MAINIO> Residue topology file being read from unit  90.
+ TITLE> *>>>>>>>>CHARMM36 ALL-HYDROGEN TOPOLOGY FILE FOR PROTEINS <<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> MAY 2011 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read param card name @pathpara/par_all36_prot.prm
+ Parameter: PATHPARA -> "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/inputfiles/par_all36_prot.prm::
+
+          PARAMETER FILE BEING READ FROM UNIT 90
+ TITLE> *>>>> CHARMM36 ALL-HYDROGEN PARAMETER FILE FOR PROTEINS <<<<<<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>>> FEB. 2012 <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *             PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    read psf card name @path/@protname_charmm.psf
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_charmm.psf::
+ MAINIO> Protein structure file being read from unit  90.
+ TITLE>  * PSF
+ TITLE>  *  DATE:    11/ 9/23     10:32:23      CREATED BY USER: jiang
+ TITLE>  *
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        3   Number of residues   =      444
+         Number of atoms         =     7103   Number of groups     =     2169
+         Number of bonds         =     7195   Number of angles     =    13004
+         Number of dihedrals     =    19087   Number of impropers  =     1279
+         Number of cross-terms   =      438
+         Number of HB acceptors  =      663   Number of HB donors  =      778
+         Number of NB exclusions =        0   Total charge =   -4.00000
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>    read coor card name @path/@protname_min.crd
+ Parameter: PATH -> "/DATA/JIANG/AFFI/BINDPPI/1A2K_OUT"
+ Parameter: PROTNAME -> "1A2K"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/1a2k_out/1a2k_min.crd::
+          SPATIAL COORDINATES BEING READ FROM UNIT 90
+ TITLE> * THIS EXAMPLE PRODUCE THE FRAME.
+ TITLE> *  DATE:    11/ 9/23     10:32:28      CREATED BY USER: JIANG
+ TITLE> *
+ VCLOSE: Closing unit   90 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    ! for partner of mutchain(mp), another partner(op)
+ CHARMM>    define a select segid ch1 -
+ CHARMM>     .or. segid ch2 end
+ SELRPN>   3924 atoms have been selected out of   7103
+  
+ CHARMM>    define b select segid ch3 -
+ CHARMM>     .or. segid ch4 end
+ SELRPN>   3179 atoms have been selected out of   7103
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    stream @pathpara/vdw_pb.str
+ Parameter: PATHPARA -> "/DATA/JIANG/AFFI/BINDPPI/INPUTFILES"
+ VOPEN> Attempting to open::/data/jiang/affi/bindppi/inputfiles/vdw_pb.str::
+ OPNLGU> Unit 99 opened for READONLY access to /data/jiang/affi/bindppi/inputfiles/vdw_pb.str
+
+                    INPUT STREAM SWITCHING TO UNIT    99
+ RDTITL>  
+ RDTITL> No title read.
+ Parameter: IN1 <- "" <empty>
+  
+ CHARMM>     
+  
+ CHARMM>    set gammaP   0.00542     ! for Gasa (non-polar dGsolv)
+ Parameter: GAMMAP <- "0.00542"
+  
+ CHARMM>    set betaP    0.92        ! for Gasa
+ Parameter: BETAP <- "0.92"
+  
+ CHARMM>    set rsol     1.4         ! solvent probe radius
+ Parameter: RSOL <- "1.4"
+  
+ CHARMM>     
+  
+ CHARMM>    set EpsG    = 1.0
+ Parameter: EPSG <- "1.0"
+  
+ CHARMM>     
+  
+ CHARMM>    update cutnb 999 switch vswitch eps @EpsG
+ Parameter: EPSG -> "1.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =999.000 CTEXNB =999.000 CTONNB =995.000 CTOFNB =997.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found  20199 exclusions and  18712 interactions(1-4)
+ <MAKGRP> found   6407 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR 25222754 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+ 25202554 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    ! calculate the vdw energy between A and B
+ CHARMM>     
+  
+ CHARMM>    interaction sele A end sele B end
+ SELRPN>   3924 atoms have been selected out of   7103
+ SELRPN>   3179 atoms have been selected out of   7103
+ INTER:  Normal Atom Nonbondselected    12474396 from a total of    25202554
+INTE ENR:  Eval#     ENERgy      Delta-E         GRMS
+INTE EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+INTE>        1  -1070.76761      0.00000      1.02327
+INTE EXTERN>      -70.63175  -1000.13586      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>    set vdwENER   = ?vdw
+ RDCMND substituted energy or value "?VDW" to "-70.6317469"
+ Parameter: VDWENER <- "-70.6317469"
+  
+ CHARMM>    set elecENER  = ?elec
+ RDCMND substituted energy or value "?ELEC" to "-1000.13586"
+ Parameter: ELECENER <- "-1000.13586"
+  
+ CHARMM>     
+  
+ CHARMM>    ! molecular surface (MS) of the complex
+ CHARMM>    coor surface rprobe @rsol select A .or. B end
+ Parameter: RSOL -> "1.4"
+ SELRPN>   7103 atoms have been selected out of   7103
+ SURFAC: Lennard-Jones radii values being used
+ SURFAC: RPRObe=   1.40000
+ SURFAC: Analytic surface area method used
+  
+ CHARMM>    set MSac = ?area
+ RDCMND substituted energy or value "?AREA" to "19650.7999"
+ Parameter: MSAC <- "19650.7999"
+  
+ CHARMM>     
+  
+ CHARMM>    ! molecular surface (MS) of A
+ CHARMM>    coor surface rprobe @rsol select A end
+ Parameter: RSOL -> "1.4"
+ SELRPN>   3924 atoms have been selected out of   7103
+ SURFAC: Lennard-Jones radii values being used
+ SURFAC: RPRObe=   1.40000
+ SURFAC: Analytic surface area method used
+  
+ CHARMM>    set MSa  = ?area
+ RDCMND substituted energy or value "?AREA" to "11581.1577"
+ Parameter: MSA <- "11581.1577"
+  
+ CHARMM>     
+  
+ CHARMM>    ! molecular surface (MS) of B
+ CHARMM>    coor surface rprobe @rsol select B end
+ Parameter: RSOL -> "1.4"
+ SELRPN>   3179 atoms have been selected out of   7103
+ SURFAC: Lennard-Jones radii values being used
+ SURFAC: RPRObe=   1.40000
+ SURFAC: Analytic surface area method used
+  
+ CHARMM>    set MSc  = ?area
+ RDCMND substituted energy or value "?AREA" to "9825.92822"
+ Parameter: MSC <- "9825.92822"
+  
+ CHARMM>     
+  
+ CHARMM>    ! The difference in MS between the complex and the free proteins, is the
+ CHARMM>    ! surface buried upon complex formation, and is stored of deltaMS.
+ CHARMM>     
+  
+ CHARMM>    calc DeltaMS =  @MSac - @MSa - @MSc
+ Parameter: MSAC -> "19650.7999"
+ Parameter: MSA -> "11581.1577"
+ Parameter: MSC -> "9825.92822"
+Evaluating: 19650.7999-11581.1577-9825.92822
+ Parameter: DELTAMS <- "-1756.28602"
+  
+ CHARMM>    stop
+ VCLOSE: Closing unit   99 with status "KEEP"
+$$$$$$  New timer profile $$$$$
+         Electrostatic & VDW             0.27 Other:            0.00
+      Nonbond force                   0.27 Other:            0.00
+   Energy time                     0.27 Other:            0.00
+ Total time                      3.45 Other:            3.19
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     3.46  SECONDS 
+                         CPU TIME:     3.43  SECONDS 

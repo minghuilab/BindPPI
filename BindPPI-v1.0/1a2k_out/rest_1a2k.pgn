@@ -1,0 +1,9 @@
+set path /data/jiang/affi/bindppi/1a2k_out
+mol load pdb $path/1a2k_namd.pdb
+set aa [atomselect top all]
+$aa set beta 0
+set aaa [atomselect top "name C CA N"]
+$aaa set beta 5
+$aa writepdb $path/1a2k_namd_restrain.pdb
+mol delete top
+exit
