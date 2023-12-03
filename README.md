@@ -36,7 +36,7 @@ cd bindppi
 
 ### For model RF_{13}
 ```sh
-python BindPPI_RF13.py -i 1a2k
+python BindPPI_RF13.py -i 1akj
 ```
 
 ### For model MLP_{5120}
@@ -46,6 +46,6 @@ python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o you
 
 ### For model AvgEns
 ```sh
-python BindPPI_AvgEns.py -i 1a2k
+python BindPPI_AvgEns.py -i 1akj
 ```
 ```
