@@ -48,4 +48,3 @@ python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o you
 ```sh
 python BindPPI_AvgEns.py -i 1akj
 ```
-```
