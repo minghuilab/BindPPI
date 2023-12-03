@@ -13,7 +13,7 @@ You can download [releases](https://github.com/minghuilab/BindPPI/releases/downl
 
 </font>
 
-### I.Docker image pull
+## I.Docker image pull
 The prefered and easiest is by pulling the docker image made available publicly.
 
 **prerequisites:** [docker](https://docs.docker.com/get-docker/)
@@ -32,53 +32,20 @@ conda activate myenv
 cd bindppi
 ```
 
-### III. RUNNING BindPPI
+## III. RUNNING BindPPI
 
-#### For model RF_{13}
+### For model RF_{13}
 ```sh
 python BindPPI_RF13.py -i 1a2k
 ```
 
-#### For model MLP_{5120}
+### For model MLP_{5120}
 ```sh
 python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
 ```
 
-#### For model AvgEns
+### For model AvgEns
 ```sh
 python BindPPI_AvgEns.py -i 1a2k
 ```
 ```
-
-### III. RUNNING BindPPI
-
-#### For model RF_{13}
-```sh
-python BindPPI_RF13.py -i 1a2k
-```
-
-#### For model MLP_{5120}
-```sh
-python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
-```
-
-#### For model AvgEns
-```sh
-python BindPPI_AvgEns.py -i 1a2k
-```
-
-## Platform
-
-<font size=4>
-
-BindPPI is only intended to run on Linux operating systems.
-
-</font>
-
-## Issues
-
-<font size=4>
-
-You will need to have Python 3.8 (or higher) installed.
-
-</font>
