@@ -13,135 +13,41 @@ You can download [releases](https://github.com/minghuilab/BindPPI/releases/downl
 
 </font>
 
-## Installation
+### I.Docker image pull
+The prefered and easiest is by pulling the docker image made available publicly.
 
-### I. PREREQUISITES
+**prerequisites:** [docker](https://docs.docker.com/get-docker/)
 
-<font size=4>
+Just pull the image:
 
-BindPPI requires the following software and packages.
+```
+docker pull feifan893/bindppi:v1
+```
 
-#### Requirements for MLP_{5120} model.
+## II.Build the image:
 
-1. Python 3 packages
+```
+docker run -it bindppi:v1 /bin/bash
+conda activate myenv
+cd bindppi
+```
 
-   To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
-    
+### III. RUNNING BindPPI
+
+#### For model RF_{13}
 ```sh
-# prefix: path for environment # /data/jiang/anaconda3/envs/myenv
-$ conda env create -f environment.yaml
+python BindPPI_RF13.py -i 1a2k
 ```
 
-
-#### Requirements for RF_{13} and AvgEns models 
-
-1. VMD
-
-   This is available on the VMD website.
-
-   https://www.ks.uiuc.edu/Research/vmd/
-
-2. CHARMM
-
-   This is available on the CHARMM website.
-
-   https://www.charmm.org/
-
-3. NAMD
-
-   This is available on the NAMD website.
-
-   https://www.ks.uiuc.edu/Research/namd/
-
-4. DSSP
-
-   This is available on the DSSP website.
-
-   https://swift.cmbi.umcn.nl/gv/dssp/
-
-5. iPot
-
-   This is available on the iPot Github.
-
-   https://github.com/gjoni/iPot
-
-6. McVol
-
-   This is available on the McVol website.
-
-   http://www.bisb.uni-bayreuth.de/index.php?page=data/mcvol/mcvol
-
-7. PDB2PQR30
-
-   This is available via pip according to the documentation.
-
-   https://pdb2pqr.readthedocs.io/en/latest/index.html
-
-8. PROVEAN
-
-   This is available on the PROVEAN website.
-
-   http://provean.jcvi.org/index.php/
-
-9. FoldX
-
-   This is available on the FoldX website.
-
-   http://foldxsuite.crg.eu/
-
-10. Python 3 packages
-
-    To install these packages, you can install the required environment by modifying the prefix in the environment.yaml file and use the following command:
-    
+#### For model MLP_{5120}
 ```sh
-# prefix: path for environment # /data/jiang/anaconda3/envs/myenv
-$ conda env create -f environment.yaml
+python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
 ```
 
-</font>
-
-### II. INSTALLATION INSTRUCTIONS
-
-<font size=4>
-
-1. Download and/or install the prerequisites described above.
-
-2. Download and unpack the distribution:
-
-</font>
-
+#### For model AvgEns
 ```sh
-$ wget https://github.com/minghuilab/BindPPI/releases/download/v1.0/bindppi.tar.gz
-$ tar -zxvf bindppi.tar.gz
+python BindPPI_AvgEns.py -i 1a2k
 ```
-
-<font size=4>
-
-3. Change to the source directory:
-
-</font>
-
-```
-$ cd bindppi/
-```
-
-<font size=4>
-
-4. Change the path parameters in BindPPI_RF13.py and BindPPI_AvgEns.py:
-
-</font>
-
-```
-workdir = Your working directory # Please ensure that the workdir contains only lowercase letters.
-pathinput = path for inputfiles directory # /data/jiang/tools/bindppi_test/inputfiles
-pathvmd = path for VMD software # /usr/local/bin/vmd
-pathcharmm = path for CHARMM software # /usr/local/bin/charmm
-pathnamd2 = path for NAMD software # /usr/local/bin/namd2
-pathdssp = path for DSSP software # /usr/local/bin/mkdssp
-pathipot = path for iPot software # /data/jiang/tools/iPot/
-pathmcvol = path for McVol software # /data/jiang/tools/McVol.rev/
-pathpdb2pqr30 = path for PDB2PQR software # /data/jiang/anaconda3/bin/pdb2pqr30
-pathprovean = path for PROVEAN software # /usr/local/bin/provean.sh
 ```
 
 ### III. RUNNING BindPPI
