@@ -27,7 +27,7 @@ docker pull feifan893/bindppi:v1
 ## II.Build the image:
 
 ```
-docker run -it bindppi:v1 /bin/bash
+docker run -it feifan893/bindppi:v1 /bin/bash
 conda activate myenv
 cd bindppi
 ```
