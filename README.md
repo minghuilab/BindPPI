@@ -38,13 +38,16 @@ cd bindppi
 ```sh
 python BindPPI_RF13.py -i 1akj
 ```
+The output file is 1akj.RF13 within the 1akj file.
 
 ### For model MLP_{5120}
 ```sh
 python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
 ```
+The output file is your_output_file, defaulting to ./MLP5120_example/MLP5120_prediction.txt.
 
 ### For model AvgEns
 ```sh
 python BindPPI_AvgEns.py -i 1akj
 ```
+The output file is 1akj.AvgEns within the 1akj file.
