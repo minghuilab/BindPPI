@@ -6,13 +6,6 @@ BindPPI calculates binding affinities for protein-protein interactions. It inclu
 
 </font>
 
-## Source code releases
-<font size=4> 
-  
-You can download [releases](https://github.com/minghuilab/BindPPI/releases/download/v1.0/bindppi.tar.gz) from Github.
-
-</font>
-
 ## I.Docker image pull
 The prefered and easiest is by pulling the docker image made available publicly.
 
