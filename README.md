@@ -8,7 +8,7 @@ BindPPI calculates binding affinities for protein-protein interactions. It inclu
 
 ## I. Installation instructions
 
-#### Docker image pull
+#### Pull Docker Image
 
 The prefered and easiest is by pulling the docker image made available publicly.
 
@@ -20,7 +20,7 @@ Just pull the image:
 docker pull minghuilab/bindppi:v1
 ```
 
-#### Building the image:
+#### Build the image
 
 ```
 docker run -it minghuilab/bindppi:v1 /bin/bash
