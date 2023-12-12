@@ -6,7 +6,7 @@ BindPPI calculates binding affinities for protein-protein interactions. It inclu
 
 </font>
 
-## I. Installation instructions
+## Installation instructions
 
 #### Pull Docker Image
 
@@ -20,7 +20,7 @@ Just pull the image:
 docker pull minghuilab/bindppi:v1
 ```
 
-#### Build the image
+#### Build the Image
 
 ```
 docker run -it minghuilab/bindppi:v1 /bin/bash
@@ -28,15 +28,16 @@ conda activate myenv
 cd bindppi
 ```
 
-## II. Running BindPPI
+## Running BindPPI
 
 ### For model RF_{13}
 ```sh
 python BindPPI_RF13.py -i example_1akj
 ```
-To run RF_{13}, you need to create a folder and prepare two input files (refer to the files example_1akj.input and 1AKJ.pdb in the example_1akj folder).
+To run the RF_{13} model, you need to (1) create a folder to organize your input and output files. Let's call it example_1akj;(2) prepare two input files similar to example_1akj.input and 1AKJ.pdb in the example_1akj folder. 
+The output file, example_1akj.RF13, will be generated as a result of running the model. 
 
-The output file is example_1akj.RF13 within the example_1akj file.
+"Please note: the folder name (example_1akj) and input file name (example_1akj.input) should be in lowercase, and their file names should match."
 
 ### For model MLP_{5120}
 ```sh
@@ -45,6 +46,8 @@ python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o you
 To run MLP_{5120}, you simply need to create a JSON file containing the input sequences for each complex (refer to the file sample_input_sequence.json in the MLP5120_example folder).
 
 The output file is your_output_file, defaulting to ./MLP5120_example/MLP5120_prediction.txt.
+
+Note: All file names need to be in lowercase font.
 
 ### For model AvgEns
 ```sh
