@@ -34,26 +34,21 @@ cd bindppi
 ```sh
 python BindPPI_RF13.py -i example_1akj
 ```
-To run the RF_{13} model, you need to (1) create a folder to organize your input and output files. Let's call it example_1akj;(2) prepare two input files similar to example_1akj.input and 1AKJ.pdb in the example_1akj folder. 
+To run the RF_{13} model, you need to (1) create a folder to organize your input and output files. Let's call it example_1akj; (2) prepare two input files similar to example_1akj.input and 1AKJ.pdb in the example_1akj folder. 
 The output file, example_1akj.RF13, will be generated as a result of running the model. 
 
-"Please note: the folder name (example_1akj) and input file name (example_1akj.input) should be in lowercase, and their file names should match."
+Note: the folder name (example_1akj) and input file name (example_1akj.input) should be in lowercase, and their file names should match.
 
 ### For model MLP_{5120}
 ```sh
 python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
 ```
-To run MLP_{5120}, you simply need to create a JSON file containing the input sequences for each complex (refer to the file sample_input_sequence.json in the MLP5120_example folder).
-
-The output file is your_output_file, defaulting to ./MLP5120_example/MLP5120_prediction.txt.
-
-Note: All file names need to be in lowercase font.
+To run the MLP_{5120} model, you only need to create a JSON file containing the input sequences for each complex (refer to the file `sample_input_sequence.json` in the `MLP5120_example` folder).
+The output file is `your_output_file`, referring to the example `MLP5120_prediction.txt`."
 
 ### For model AvgEns
 ```sh
 python BindPPI_AvgEns.py -i example_1akj
 ```
-To run AvgEns, you need to create a folder and prepare three input files (refer to the files example_1akj.input, 1AKJ.pdb, and example_1akj.json in the example_1akj folder).
-
-The output file is example_1akj.AvgEns within the example_1akj file.
-
+To run the AvgEns model, you need to (1) create a folder to organize your input and output files. Let's call it example_1akj; (2) prepare three input files similar to example_1akj.input, 1AKJ.pdb, and example_1akj.json in the example_1akj folder. 
+The output file, example_1akj.AvgEns, will be generated as a result of running the model. 
