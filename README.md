@@ -35,17 +35,19 @@ cd bindppi
 ```sh
 python BindPPI_RF13.py -i example_1akj
 ```
+<font size=3>
 To run the RF_{13} model, you need to (1) create a folder to organize your input and output files. Let's call it example_1akj; (2) prepare two input files similar to example_1akj.input and 1AKJ.pdb in the example_1akj folder. 
 The output file, example_1akj.RF13, will be generated as a result of running the model. 
 
 Note: the folder name (example_1akj) and input file name (example_1akj.input) should be in lowercase, and their file names should match.
+</font>
 
 ### For model MLP_{5120}
 ```sh
 python BindPPI_MLP5120.py -f ./MLP5120_example/sample_input_sequence.json -o your_output_file
 ```
-To run the MLP_{5120} model, you only need to create a JSON file containing the input sequences for each complex (refer to the file `sample_input_sequence.json` in the `MLP5120_example` folder).
-The output file is `your_output_file`, referring to the example `MLP5120_prediction.txt`."
+To run the MLP_{5120} model, you only need to create a JSON file containing the input sequences for each complex (refer to the file sample_input_sequence.json in the MLP5120_example folder).
+The output file is your_output_file, referring to the example MLP5120_prediction.txt.
 
 ### For model AvgEns
 ```sh
