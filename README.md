@@ -19,6 +19,7 @@ Just pull the image:
 ```
 docker pull minghuilab/bindppi:v1
 ```
+Note: this step may take about 20mins.
 
 #### Build the Image
 
