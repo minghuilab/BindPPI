@@ -20,7 +20,7 @@ Just pull the image:
 docker pull minghuilab/bindppi:v1
 ```
 
-Build the image:
+Building the image:
 
 ```
 docker run -it minghuilab/bindppi:v1 /bin/bash
