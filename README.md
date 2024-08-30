@@ -55,4 +55,4 @@ To run the AvgEns model, you need to (1) create a folder to organize your input 
 The output file, example_1akj.AvgEns, will be generated as a result of running the model. 
 
 ### Memory Requirements
-Based on our testing, running the MLP_{5120} and AvgEns models requires a minimum of 17 GB of memory. Please ensure that your machine has more than 17 GB of RAM to successfully run these models.
+Based on our testing, the examples we provide for running the MLP_{5120} and AvgEns models require at least 17 GB of memory. Please ensure that your machine has more than 17 GB of RAM to successfully run these models.
